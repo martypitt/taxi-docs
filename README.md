@@ -33,7 +33,38 @@ Once the route to the bin file has been added, open a command line/terminal wind
 
 This will install taxi onto your machine and make it available to use.
 
-Create your first Taxi file, named `person.taxi`:
+### Creating an application from the command line
+
+We are going to create an application from the command line and add taxi into that application. First steps are to `cd` into the directory you want your application to be created in.
+
+Now, let's look at creating an application. Run the following command:
+
+`mkdir my-project`
+
+This will create a project called my-project. In order to initialise taxi, we need to `cd` into our project and run:
+
+`taxi init`
+
+This will bring the latest version of taxi into our project and prompt us with a bunch of fields to fill in. What needs to be filled in?
+
+* Project group: `com.hello`
+* Project name: `demo`
+* Project version: _hit enter_
+* Source directory: _hit enter_
+
+We should be able to see taxi being added to our project, but how do we test this? Well if taxi has been successfully added there will be a `taxi.conf` file in our project. In the command line, ensure you are still inside my-project and run `ls`,  you should see:
+
+`src`  and `taxi.conf`
+
+If we run `cat taxi.conf` we will see this:
+
+```text
+name: demo/hello-world
+version: 0.1.0
+sourceRoot: src/
+```
+
+Now we can create our first Taxi file, named `person.taxi`:
 
 {% code title="person.taxi" %}
 ```text
@@ -43,18 +74,6 @@ namespace demo {
       firstName : FirstName as String
       lastName : LastName as String
    }
-}
-```
-{% endcode %}
-
-And create a project file, named `taxi.conf`:
-
-{% code title="taxi.conf" %}
-```text
-name: demo/hello-world
-version: 0.1.0
-plugins {
-   taxi/kotlin {}
 }
 ```
 {% endcode %}
