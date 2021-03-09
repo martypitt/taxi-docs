@@ -31,7 +31,9 @@ Once the route to the bin file has been added, open a command line/terminal wind
 
 `taxi`
 
-This will install taxi onto your machine and make it available to use.
+This will install taxi onto your machine and make it available to use
+
+.
 
 ### Creating an application from the command line
 
